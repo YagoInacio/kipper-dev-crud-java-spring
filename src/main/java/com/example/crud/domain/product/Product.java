@@ -17,5 +17,10 @@ public class Product {
     private String name;
 
     @Column(name="price_in_cents")
-    private Number priceInCents;
+    private Integer priceInCents;
+
+    public Product(RequestProduct requestProduct){
+        this.name = requestProduct.name();
+        this.priceInCents = requestProduct.priceInCents();
+    }
 }
