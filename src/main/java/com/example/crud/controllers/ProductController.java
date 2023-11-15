@@ -58,13 +58,12 @@ public class ProductController {
         if (optionalProduct.isPresent()) {
 
             Product product = optionalProduct.get();
-            System.out.println(product);
 
             product.setActive(false);
 
             return ResponseEntity.noContent().build();
         }
 
-        return ResponseEntity.notFound().build();
+        throw new EntityNotFoundException();
     }
 }
