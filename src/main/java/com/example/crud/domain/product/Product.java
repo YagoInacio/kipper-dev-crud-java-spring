@@ -19,8 +19,11 @@ public class Product {
     @Column(name="price_in_cents")
     private Integer priceInCents;
 
+    private Boolean active;
+
     public Product(RequestProduct requestProduct){
         this.name = requestProduct.name();
         this.priceInCents = requestProduct.priceInCents();
+        this.active = true;
     }
 }
